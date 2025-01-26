@@ -4,9 +4,12 @@ from time import sleep
 import numpy as np
 import cvzone
 from pynput.keyboard import Controller
+screen_width = 1920  # Replace with your screen's width
+screen_height = 1080  # Replace with your screen's height
+
 cap = cv2.VideoCapture(0)
-cap.set(3, 1280)  # Set width
-cap.set(4, 720)   # Set height 
+cap.set(3,screen_width  )  # Set width
+cap.set(4,screen_height)   # Set height 
 
 detector = HandDetector(detectionCon=0.8)
 keys = [["Q","W","E","R","T","V","U","I","O","P"],
