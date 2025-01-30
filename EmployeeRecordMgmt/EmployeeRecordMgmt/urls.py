@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls), #default admin panel path
     path('', index,name = 'index'),
     path('registration', registration,name = 'registration'),
+    path('emp_login', emp_login,name = 'emp_login'),
 
 ]
