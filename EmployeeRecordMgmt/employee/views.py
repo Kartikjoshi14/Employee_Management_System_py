@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from django.contrib.auth import login,logout,authenticate
 
 # Create your views here.
 def index(request):
@@ -23,4 +24,17 @@ def registration(request):
     return render(request,'registration.html',locals())
 
 def emp_login(request):
-    return render(request,'emp_login.html')
+    error = ""
+    if request.method == "POST":
+        u=request.POST['emailid']
+        p=request.POST['password']
+        user = authenticate(username=u,password=p)
+        if user:
+            login(request,user)
+            error = "no"
+        else:
+            error = "yes"
+    return render(request,'emp_login.html',locals())
+
+def emp_home(request):
+    return render(request,'emp_home.html')
