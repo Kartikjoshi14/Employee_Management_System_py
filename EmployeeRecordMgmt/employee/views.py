@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import *
 from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from employee.models import EmployeeDetail
 
 # Create your views here.
 def index(request):
@@ -42,7 +45,7 @@ def emp_home(request):
 def profile(request):
     error = ""
     user = request.user
-    employee = EmployeeDetail.objects.get(user = user)
+    employee =EmployeeDetail.objects.get(user=user)
     if request.method == "POST":
         fn = request.POST['firstname']
         ln  = request.POST['lastname']
