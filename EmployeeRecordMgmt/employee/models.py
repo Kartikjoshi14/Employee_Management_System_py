@@ -14,3 +14,4 @@ class EmployeeDetail(models.Model):
     joiningdate = models.DateField(null=True)
     def __str__(self):
         return self.user.username
+    

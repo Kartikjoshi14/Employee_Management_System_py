@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label>Joining date[{{employee.joiningdate}}</label>
+                            <label>Joining date[{{employee.joiningdate}}]</label>
                             <input type="date" name="jdate" class="form-control">
                         </div>
                     </div>
@@ -90,8 +90,8 @@
 
 {% if error == "no" %}
 <script>
-    alert('Signup Succesful');
-    window.location = ('{% url 'emp_login' %}');
+    alert('Profile Updated  Succesfully');
+    window.location = ('{% url 'profile' %}');
 </script>
 {% endif %}
 {% if error == "yes" %}
