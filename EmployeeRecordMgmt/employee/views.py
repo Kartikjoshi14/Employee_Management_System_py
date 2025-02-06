@@ -20,6 +20,8 @@ def registration(request):
         try:
            user = User.objects.create_user(first_name=fn,last_name=ln,username=em,password=pwd)
            EmployeeDetail.objects.create(user = user,empcode=ec)
+           EmployeeExperience.objects.create(user = user,empcode=ec)
+           EmployeeEducation.objects.create(user = user,empcode=ec)
            error = "no"
         except:
             error = "yes"
@@ -86,3 +88,14 @@ def profile(request):
             
     return render(request,'profile.html',locals())
 
+def admin_login(request):
+    return render(request,'admin_login.html')
+
+def my_experience(request):
+    if not request.user.is_authenticated:
+        return redirect('emp_login')
+    user = request.user
+    experience =EmployeeExperience.objects.get(user=user)
+    
+            
+    return render(request,'myexperience.html',locals())

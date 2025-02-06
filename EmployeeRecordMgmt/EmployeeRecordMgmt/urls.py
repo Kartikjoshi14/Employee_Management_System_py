@@ -25,5 +25,7 @@ urlpatterns = [
     path('emp_home', emp_home,name = 'emp_home'),
     path('profile', profile,name = 'profile'),
     path('logout', Logout ,name = 'logout'),
+    path('admin_login',admin_login ,name = 'admin_login'),
+    path('my_experience',my_experience,name = 'my_experience'),
 
 ]
