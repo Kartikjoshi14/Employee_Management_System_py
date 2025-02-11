@@ -77,7 +77,7 @@
 {% if error == "no" %}
 <script>
     alert('Signup Succesful');
-    window.location = ('{% url 'emp_login' %}');
+    window.location.href = ('{% url 'emp_login' %}');
 </script>
 {% endif %}
 {% if error == "yes" %}

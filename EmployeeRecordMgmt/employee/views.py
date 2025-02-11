@@ -98,4 +98,4 @@ def my_experience(request):
     experience =EmployeeExperience.objects.get(user=user)
     
             
-    return render(request,'myexperience.html',locals())
+    return render(request,'my_experience.html',locals())
