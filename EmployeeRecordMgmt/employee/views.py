@@ -214,3 +214,25 @@ def edit_myeducation(request):
             error = "yes"
             
     return render(request,'edit_myeducation.html',locals())
+
+
+def change_password(request):
+    if not request.user.is_authenticated:
+        return redirect('emp_login')
+    error = ""
+    user = request.user
+    if request.method == "POST":
+        c = request.POST['currentpassword']
+        n = request.POST['newpassword']
+
+        try:
+            if user.check_password(c):
+               user.set_password(n)
+               user.save()   
+               error = "no"
+            else:
+                error = "not"
+        except:
+            error = "yes"
+            
+    return render(request,'change_password.html',locals())
