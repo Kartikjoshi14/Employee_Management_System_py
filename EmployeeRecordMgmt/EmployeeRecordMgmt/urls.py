@@ -31,6 +31,10 @@ urlpatterns = [
     path('my_education/',my_education,name = 'my_education'),
     path('edit_myeducation/',edit_myeducation,name = 'edit_myeducation'),
     path('change_password/',change_password,name = 'change_password'),
+    path('admin_home/',admin_home,name = 'admin_home'),
+    path('change_passwordadmin/',change_passwordadmin,name = 'change_passwordadmin'),
+    path('all_employees/',all_employees,name = 'all_employees'),
+
 
 
 ]
