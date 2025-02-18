@@ -285,3 +285,6 @@ def all_employees(request):
         return redirect('admin_login')
     employee = EmployeeDetail.objects.all()
     return render(request,'all_employees.html',locals())
+
+
+
