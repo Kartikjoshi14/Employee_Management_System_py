@@ -22,6 +22,7 @@
                         <th>Joining Date</th>
                         <th>Actions</th>
 
+
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +35,11 @@
                         <td>{{i.user.username}}</td>
                         <td>{{i.contact}}</td>
                         <td>{{i.joiningdate}}</td>
-                        <td>{{i.user.counter}}</td>
+                        <td>
+                            {{i.counter}}
+                        </td>
+
+
 
                     </tr>
                     {% endfor%}
